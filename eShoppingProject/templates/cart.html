@@ -1,5 +1,3 @@
-<!-- cart/cart.html -->
-
 <html lang="en">
 
 <head>
@@ -7,26 +5,22 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	<style>
-		/* Add CSS styles for flex container and items */
+		
 		.product-list {
 			display: flex;
-			flex-wrap: wrap; /* Allow items to wrap to the next row if necessary */
-			justify-content: space-between; /* Space items evenly along the main axis */
-			list-style: none; /* Remove list styles */
+			flex-wrap: wrap; 
+			justify-content: space-between; 
+			list-style: none;
 			padding: 0;
 		}
 
 		.product-item {
-
-			flex: 1; /* Grow to fill available space evenly */
-			/* Limit item width to avoid overcrowding */
-			margin: 10px; /* Add spacing between items */
-			border: 1px solid #ccc; /* Add a border for visual separation */
+			flex: 1; 
+			margin: 10px;
+			border: 1px solid 
 			padding: 10px;
 			text-align: center;
 		}
-
-		/* Style the "Buy Now" button */
 		.buy-now-button {
 			display: block;
 			margin-top: 10px;
@@ -50,7 +44,7 @@
 	{% for item in cart_items %}
 	<div class="product-item">
 
-		<p>{{ item.product.name }} ({{ item.quantity }})</p>
+	<p>{{ item.product.name }} ({{ item.quantity }})</p>
         <p>{{ item.product.image }}</p>
 		<p>Price: Ksh{{ item.product.price }}</p>
 		<a href="{% url 'cart:remove_from_cart' item.id %}">Remove</a>
